@@ -1,0 +1,53 @@
+<custom-top-bar title="同城鲜花送"></custom-top-bar>
+<view class="index-container">
+  <view class="background-top"></view>
+  <!-- 轮播图区域 -->
+  <swiper indicator-dots class="swiper-container" indicator-active-color="#bfa" autoplay interval="4000" circular>
+    <swiper-item>
+      <image src="../../assets/banner/banner-1.jpg" mode="aspectFill" />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../assets/banner/banner-2.jpg" mode="aspectFill" />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../assets/banner/banner-3.jpg" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+  <!-- 首页快捷链接 -->
+  <view class="index-link-list">
+    <view class="link-item-index" wx:for="{{10}}" wx:key="index">
+      <image src="../../assets/images/cate-1.png" mode="aspectFit" />
+      <text>鲜花玫瑰</text>
+    </view>
+  </view>
+
+  <!-- 推荐展示 -->
+  <view class="recommend">
+    <view class="right-big-pic">
+      <image src="../../assets/images/love.jpg" mode="aspectFit" />
+    </view>
+    <view class="left-small-pic">
+      <image src="../../assets/images/friend.jpg" mode="aspectFill" />
+      <image src="../../assets/images/elder.jpg" mode="aspectFill" />
+    </view>
+
+  </view>
+  <!-- 猜你喜欢 -->
+  <view class="love-good">
+    <view class="title"> <text>猜你喜欢</text></view>
+
+    <view class="guess-your-love">
+      <card wx:for="{{6}}" wx:key="index"></card>
+    </view>
+    <view class="button-get-more">
+      <navigator url="/pages/good/goodslist/goodslist" open-type="navigate" class="nav-get-more" hover-class="nav-get-more-hover">查看更多</navigator>
+    </view>
+  </view>
+
+  <!-- 每日推荐 -->
+  <cardlist title="每日推荐"></cardlist>
+
+
+</view>
+<!-- 底部占位 -->
+<bottom-custom-place></bottom-custom-place>

@@ -1,0 +1,11 @@
+<custom-top-bar isShowBack="true" title="详情"></custom-top-bar>
+<!-- 商品列表 -->
+<view class="container-goodlist">
+  <cardlist isShowMore="{{false}}" isShowTitle="{{false}}">
+    <view slot="more" class="more-info">
+      数据加载完毕了~~~
+    </view>
+  </cardlist>
+</view>
+<!-- 底部占位 -->
+<!-- <bottom-custom-place></bottom-custom-place> -->

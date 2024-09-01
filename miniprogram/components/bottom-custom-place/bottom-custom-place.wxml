@@ -1,0 +1,2 @@
+<!-- 设置tab后的底部占位组件 -->
+<view class="place-holder" style="height: {{safeBattomAreaHeight?safeBattomAreaHeight+48+5:48+5}}px;width: 100%;"></view>

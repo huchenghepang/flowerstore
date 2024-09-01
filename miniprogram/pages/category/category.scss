@@ -1,0 +1,76 @@
+/* pages/category/category.wxss */
+
+.category-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  // 一级分类
+  .first-category {
+    width: 25%;
+    height: 100%;
+    background-color: #fff;
+    border-right: 1rpx solid #fff;
+    box-shadow: 0 2rpx 4rpx #b3aeae;
+    text-align: center;
+
+    .first-item {
+      height: 75rpx;
+      width: 100%;
+      text-align: center;
+      line-height: 75rpx;
+
+      .text-active {
+        border-left: 6rpx solid #a71717;
+        color: #a71717;
+        text-decoration: underline;
+        text-decoration-color: #93ac24;
+      }
+
+      .text {
+        display: inline-block;
+        width: 100%;
+        height: 40rpx;
+        font-size: 32rpx;
+        vertical-align: middle;
+        line-height: 40rpx;
+
+      }
+    }
+  }
+
+  // 二级分类
+  .second-category {
+    height: 100%;
+    width: 75%;
+
+    // 快捷链接列表
+    .index-link-list {
+      background-color: #fff;
+      box-shadow: 2rpx 2rpx 4rpx #663a3a;
+      padding: 20rpx 0;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 160rpx 160rpx;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20rpx;
+      column-gap: 10rpx;
+
+      .link-item-index {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        image {
+          width: 100rpx;
+          height: 100rpx;
+          object-fit: cover;
+        }
+        text {
+          line-height: 30rpx;
+          font-size: 24rpx;
+        }
+      }
+    }
+  }
+}

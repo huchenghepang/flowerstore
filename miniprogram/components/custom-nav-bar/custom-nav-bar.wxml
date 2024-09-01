@@ -1,0 +1,12 @@
+<!-- mark:navbar -->
+<view class="nav-bar-container" style="height: {{statusInfo.topBarHeight}}px;">
+  <!-- 状态栏占位 -->
+  <view class="place-block" style="height: {{statusInfo.statusBarHeight}}px;"></view>
+  <!-- 导航栏 -->
+  <view class="main">
+    <navigator wx:if="{{isShowBack}}" open-type="navigateBack" class="iconfont icon-Back" style="font-size: {{statusInfo.menuButtonHeight}}px;margin: {{statusInfo.diffTopHeight}}px {{statusInfo.diffLeftWidth}}px !important;"></navigator>
+    <view wx:else class="place-holder" style="height: {{statusInfo.navBarHeight}}px;"></view>
+    <view class="center-bar">{{title}}</view>
+  </view>
+
+</view>

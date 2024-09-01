@@ -1,0 +1,4 @@
+<!--components/custom-main-content/custom-main-content.wxml-->
+<view class="custom-main-content" style="height: {{MainContentHeight}}px;">
+<slot></slot>
+</view>

@@ -1,0 +1,12 @@
+<!--components/cardlist/cardlist.wxml-->
+<view class="card-list">
+  <view class="title" wx:if="{{isShowTitle}}"> <text class="text">{{title}}</text></view>
+  <view class="card-item-list">
+    <card wx:for="{{6}}" wx:key="index"></card>
+  </view>
+  <view class="button-get-more" wx:if="{{isShowMore}}">
+    <navigator url="/pages/good/goodslist/goodslist" open-type="navigate" class="nav-get-more" hover-class="nav-get-more-hover">查看更多</navigator>
+  </view>
+  <slot name="more" class="more-info">
+  </slot>
+</view>

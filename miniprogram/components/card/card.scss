@@ -1,0 +1,82 @@
+/* components/card/card.wxss */
+
+.card-container {
+  width: 350rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+  border-radius: 24rpx;
+  border: 2rpx solid #d3d0d0;
+  box-shadow: 2rpx 2rpx 4rpx #d6c8c8;
+  box-sizing: border-box;
+
+  .card-image {
+    width: 100%;
+    border-radius: 24rpx 24rpx 0 0;
+
+    .card-image-pic {
+      border-radius: 24rpx 24rpx 0 0;
+      width: 100%;
+    }
+  }
+
+  .card-info {
+    width: 100%;
+    padding: 10rpx;
+    display: flex;
+    flex-direction: column;
+
+    .goods_item_info_name {
+      width: 90%;
+      font-size: 30rpx;
+      line-height: 40rpx;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .goods_item_info_promo {
+      width: 90%;
+      font-size: 24rpx;
+      line-height: 40rpx;
+      color: #71797f;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .goods_item_info_bottom{
+      padding: 20rpx 10rpx;
+      position:relative;
+      display: flex;
+      display: flex;
+      .goods_item_info_price{
+        color: #F36A75;
+        font-weight: 700;
+        font-size: 32rpx;
+        line-height: 40rpx;
+      }
+      .goods_item_info_origin_price{
+        .text{
+          font-size: 20rpx;
+          color: #71797f;
+          text-decoration-line: line-through;
+          margin-left: 6%;
+          margin-top: 4rpx;
+        }
+      }
+
+      .goods_item_info_btn{
+        position:absolute;
+        right: 40rpx;
+        height: 50rpx;
+        width: 50rpx;
+        border-radius: 50%;
+        .goods_image{
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

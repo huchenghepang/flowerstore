@@ -1,0 +1,38 @@
+  .card-list{
+    .title{
+      text-align: center;
+      padding: 6rpx 0;
+      .text{
+        font-size: 40rpx;
+        font-weight: 600;
+      }
+    }
+    .card-item-list{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: auto;
+      column-gap: 10rpx;
+      row-gap: 10rpx;
+    }
+
+    // 查看更多
+    .button-get-more{
+      height: 70rpx;
+      width: 100%;
+      background-color: #fff;
+      margin-top: 10rpx;
+      border-radius: 45rpx;
+      text-align: center;
+      .nav-get-more{
+        height: 100%;
+        border-radius: 45rpx;
+        line-height: 60rpx;
+        font-size: 32rpx;
+      }
+
+      .nav-get-more-hover{
+        color: #3a8d26;
+      }
+    }
+
+  }

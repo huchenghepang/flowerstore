@@ -1,0 +1,28 @@
+<view class="card-container">
+  <navigator url="/pages/good/detail/detail" class="card-nav">
+    <!-- 商品图片 -->
+    <view class="card-image">
+      <image class="card-image-pic" src="../../assets/images/floor.jpg" mode="widthFix" />
+    </view>
+    <!-- 商品详情信息 -->
+    <view class="card-info">
+      <!-- 商品名称 -->
+      <text class="goods_item_info_name">亲爱的/情人节网红款/19枝</text>
+      <!-- 商品描述 -->
+      <text class="goods_item_info_promo">情人节新品情人节新品情人节新品情人节新品</text>
+      <!-- 商品价格 -->
+      <view class="goods_item_info_bottom">
+        <view class="goods_item_info_price">
+          <text class="text">¥</text>399
+        </view>
+        <view class="goods_item_info_origin_price">
+          <text class="text">¥1{{goodItem.marketPrice}}</text> 
+        </view>
+        <!-- 加入购物车图片 -->
+        <view class="goods_item_info_btn">
+          <image class="goods_image" src="/assets/images/buybtn.png" mode="" />
+        </view>
+      </view>
+    </view>
+</navigator>
+</view>

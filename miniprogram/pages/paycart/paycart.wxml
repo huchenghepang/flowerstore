@@ -1,0 +1,38 @@
+<!--pages/paycart/paycart.wxml-->
+<!-- 顶部导航栏 -->
+<custom-top-bar title="购物车"></custom-top-bar>
+
+<!-- 购物车列表 -->
+<view class="cart-list">
+
+
+  <van-swipe-cell wx:for="{{5}}" wx:key="index" id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose">
+    <van-cell-group>
+      <view class="header-cart">
+        <van-checkbox custom-class="check-cart" value="{{ checked }}" checked-color="#07c160">
+        </van-checkbox>
+        <image class="img" src="/assets/images/floor-img.jpg" mode="aspectFit" />
+        <view class="cart-info-good">
+          <view class="title">亲爱的/情人节网红款/19枝</view>
+          <view class="cart-detail">
+            <text class="text">￥100</text>
+            <van-stepper class="stepper" value="{{1}}" bind:change="onChange" />
+          </view>
+        </view>
+      </view>
+
+    </van-cell-group>
+    <view slot="right" class="van-swipe-cell__right">删除</view>
+  </van-swipe-cell>
+
+  <van-submit-bar custom-class="submit-bar" price="{{ 3050 }}" button-text="提交订单" bind:submit="onClickButton" tip="{{ true }}">
+    <van-checkbox value="{{ checked }}" checked-color="#07c160" bind:change="toggleAll">
+      复选框
+    </van-checkbox>
+    <view slot="tip">您的收货地址不支持同城送, <text>修改地址</text></view>
+  </van-submit-bar>
+</view>
+<!-- 对话框节点 -->
+<van-dialog id="van-dialog" />
+<!-- 底部占位 -->
+<bottom-custom-place></bottom-custom-place>

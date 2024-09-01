@@ -1,0 +1,25 @@
+<!--pages/category/category.wxml-->
+<!-- 顶部导航栏 -->
+<custom-top-bar title="分类"></custom-top-bar>
+<custom-main-content>
+  <view class="category-container">
+    <!-- 一级分类 -->
+    <view class="first-category">
+      <view class="first-item"><text class="text text-active">爱礼精选</text></view>
+      <view class="first-item"><text class="text">鲜花玫瑰</text></view>
+      <view class="first-item"><text class="text">永生玫瑰</text></view>
+      <view class="first-item"><text class="text">玫瑰珠宝</text></view>
+    </view>
+    <!-- 二级分类 -->
+    <view class="second-category">
+      <view class="index-link-list">
+        <navigator url="/pages/good/goodslist/goodslist" class="link-item-index" wx:for="{{10}}" wx:key="index" open-type="navigate">
+          <image src="../../assets/images/cate-1.png" mode="aspectFit" />
+          <text>真情告白</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</custom-main-content>
+<!-- 底部占位 -->
+<!-- <bottom-custom-place style="position: ;"></bottom-custom-place> -->
