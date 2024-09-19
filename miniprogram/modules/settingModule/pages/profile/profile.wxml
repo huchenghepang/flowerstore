@@ -1,0 +1,45 @@
+<custom-top-bar title="更新个人资料" isShowBack="true"></custom-top-bar>
+<view class="prefile-container">
+  <van-cell-group inset>
+    <van-cell custom-class="avatar-container">
+      <view slot="title" class="avatar-title">
+        头像
+      </view>
+
+      <view slot="right-icon" class="right">
+        <van-image custom-class="avatar" width="75rpx" height="75rpx" src="{{userStore.userInfo.headimgurl}}" />
+        <button class="avatar-btn" open-type="chooseAvatar" size="mini" plain bindchooseavatar="changeAvator">
+          <van-icon name="arrow" />
+        </button>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <van-cell-group inset>
+    <van-cell title="昵称">
+      <view slot="right-icon" style="display:flex;align-item:center; ">
+        <view>
+          {{userStore.userInfo.nickname}}
+        </view>
+        <button style="border:none" size="mini" plain bind:tap="updateNickName">
+          <van-icon name="arrow" />
+        </button>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+
+<!-- 确认更新用户新 -->
+<van-button custom-class="confirm-userinfo" type="primary" bind:tap="confirmUserInfo">确认更新用户信息</van-button>
+<van-dialog
+  use-slot
+  title="亲，可以修改你的昵称哟"
+  show="{{ isShowUpdateNickname }}"
+  show-cancel-button
+  bind:close="cancelUpdateNickname"
+  bind:confirm="confirmUpdateNickname"
+  transition="fade"
+>
+  <!-- nickname不能被开发工具模拟 但是能够被真机上正常运行 -->
+
+  <input type="nickname" class="input-nickname" placeholder="请输入您的昵称" maxlength="40" value="{{userStore.userInfo.nickname}}" bindinput="setNewNickname" />
+</van-dialog>

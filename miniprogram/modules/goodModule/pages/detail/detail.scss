@@ -1,0 +1,112 @@
+/* pages/good/detail/detail.wxss */
+
+// 商品大图
+.show-good-big {
+  width: 100%;
+  .img {
+    width: 100%;
+  }
+}
+
+// 商品信息
+.good-info {
+  position: relative;
+  margin: -100rpx 25rpx 25rpx;
+  background-color: #ffffff;
+  border: 2rpx solid #fafafa;
+  padding: 50rpx 25rpx;
+  border-radius: 30rpx;
+  .price {
+    .discount-price {
+      color: brown;
+      font-size: 40rpx;
+      font-weight: 600;
+    }
+
+    .native-price {
+      color: gray;
+      font-size: 24rpx;
+      text-decoration: line-through;
+    }
+  }
+  .food-detail-info {
+    padding: 10rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .other-info {
+    padding: 10rpx;
+    font-size: 24rpx;
+    color: gray;
+  }
+}
+
+// 商品展示
+.good-show-detail {
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  .img {
+    width: 100%;
+  }
+}
+
+// 底部面板弹窗 购物车信息
+.cart-info {
+  padding: 25rpx;
+  .header-cart {
+    width: 100%;
+    height: 400rpx;
+    display: flex;
+    .img {
+      width: 45%;
+      height: 100%;
+      margin-right: 20rpx;
+    }
+
+    .cart-info-good {
+      width: 50%;
+      padding: 10rpx;
+      position: relative;
+      .title {
+        font-size: 24rpx;
+      }
+      .cart-detail {
+        position: absolute;
+        width: 100%;
+        bottom: 10rpx;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        .text {
+          color: orangered;
+        }
+      }
+    }
+  }
+
+  // 祝福语
+  .bress {
+    padding: 20rpx 0;
+    .bress-msg {
+      width: 100%;
+      height: 300rpx;
+      background-color: #f7f8fa;
+      border-radius: 30rpx;
+      font-size: 24rpx;
+      padding: 20rpx;
+      margin: 20rpx 0;
+      box-sizing: border-box;
+    }
+  }
+}
+
+// 底部占位
+.goods-action-placeholder {
+  height: 120rpx;
+  width: 100%;
+}

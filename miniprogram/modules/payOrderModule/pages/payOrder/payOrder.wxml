@@ -1,0 +1,60 @@
+<!--modules/payModule/payOder/payOder.wxml-->
+<!-- 顶部导航栏 -->
+<custom-top-bar title="提交订单" isShowBack="true"></custom-top-bar>
+<view class="container">
+  <van-cell wx:if="{{!addressInfo.id}}" is-link link-type="navigateTo" url="/modules/addressModule/pages/address/address?frag=1" icon="plus" center>
+    <view slot="title">
+      <view class="van-cell-text">请添加收货地址</view>
+    </view>
+  </van-cell>
+  <van-cell wx:else is-link link-type="navigateTo" url="/modules/addressModule/pages/address/address?frag=1" center>
+    <view slot="title">
+      <view class="van-cell-text">{{addressInfo.address}}</view>
+      <view class="sub-title">
+        <van-tag type="danger">{{addressInfo.isDefault?"默认":"自选"}}</van-tag>
+        <text style="margin-left:20rpx">{{addressInfo.phone}}</text>
+      </view>
+    </view>
+  </van-cell>
+  <van-cell-group custom-class="oder-container">
+    <van-field label="订购人姓名:" model:value="{{buyName}}" />
+    <van-field label="手机号:" model:value="{{buyPhone}}" />
+    <van-cell title="期望送达日期:" value="{{deliveryDate}}" use-label-slot bind:tap="showCalendar">
+      <view class="label">
+        选择送达日期 >
+      </view>
+    </van-cell>
+
+    <van-cell title="订单备注:" use-label-slot>
+      <view class="icon" slot="label"
+        ><textarea
+          model:value="{{remarks}}"
+          placeholder="写上您的祝福语，给心爱的他（她）送上您的祝福（请勿填写特殊符号或标签符号)"
+          class="text-remark"
+          name="remark"
+          id=""
+          row="3"
+        ></textarea>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <view class="oder-list">
+    <van-card
+      wx:for="{{orderInfo.cartVoList}}"
+      wx:key="index"
+      custom-class="oder-detail"
+      num="{{item.count}}"
+      price="{{item.price/100}}"
+      desc="{{item.blessing}}"
+      title="{{item.name}}"
+      thumb="{{ item.imageUrl }}"
+      thumb-mode="aspectFill"
+      centered
+      thumb-link="/modules/goodModule/pages/detail/detail?id={{item.goodsId}}"
+    />
+  </view>
+</view>
+<!-- 底部占位 -->
+<bottom-custom-place></bottom-custom-place>
+<van-submit-bar price="{{ orderInfo.totalAmount }}" button-text="提交订单" bind:submit="submitOrder" />
+<van-calendar show="{{ isShowCalendar }}" bind:close="onClose" bind:confirm="onConfirmDate" />

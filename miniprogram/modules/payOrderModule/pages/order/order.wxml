@@ -1,0 +1,30 @@
+<!--pages/order/order.wxml-->
+
+<custom-top-bar class="background-color" isShowBack="true" title="订单列表"></custom-top-bar>
+<van-empty wx:if="{{orderList.length===0}}" description="没有订单" />
+<view wx:else class="order-list">
+  <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+    <view class="header">
+      <text class="order-number">订单编号:{{item.orderNo}}</text>
+      <text class="pay-status">{{item.orderStatus?"已支付":"未支付"}}</text>
+    </view>
+
+    <!-- 商品卡片 -->
+    <van-card
+      custom-class="good-card"
+      wx:for="{{item.orderDetailList}}"
+      wx:key="index"
+      num="{{item.count}}"
+      price="{{item.price/100}}"
+      desc="{{item.blessing?'祝福语:'+item.blessing:''}}"
+      title="{{item.name}}"
+      thumb="{{item.imageUrl}}"
+      thumb-link="/modules/goodModule/pages/detail/detail?id={{item.goodsId}}"
+    >
+    </van-card>
+    <view class="order-info"><text class="price">实付:￥{{item.totalAmount/100}}</text><text class="total-count">总数:{{item.totalCount}}</text></view>
+  </view>
+  <view wx:if="{{isBottom}}" class="bottom-tip">亲，所有订单都加载完成了</view>
+
+  <van-loading wx:if="{{isLoading}}" custom-class="loading" size="24px">加载中...</van-loading>
+</view>

@@ -1,53 +1,82 @@
+<!-- 引入骨架屏 -->
+<import src="index.skeleton.wxml"></import>
+<!-- 使用骨架屏 -->
+<template is="skeleton" wx:if="{{loading}}" />
+
 <custom-top-bar title="同城鲜花送"></custom-top-bar>
 <view class="index-container">
   <view class="background-top"></view>
   <!-- 轮播图区域 -->
   <swiper indicator-dots class="swiper-container" indicator-active-color="#bfa" autoplay interval="4000" circular>
-    <swiper-item>
-      <image src="../../assets/banner/banner-1.jpg" mode="aspectFill" />
-    </swiper-item>
-    <swiper-item>
-      <image src="../../assets/banner/banner-2.jpg" mode="aspectFill" />
-    </swiper-item>
-    <swiper-item>
-      <image src="../../assets/banner/banner-3.jpg" mode="aspectFill" />
-    </swiper-item>
+    <block wx:for="{{carouselList}}" wx:key="index">
+      <swiper-item>
+        <navigator class="navigator" url="/modules/goodModule/pages/detail/detail?id={{item.id}}" hover-class="navigator-hover">
+          <image class="image" src="{{item.imageUrl}}" mode="aspectFill" />
+        </navigator>
+      </swiper-item>
+    </block>
   </swiper>
-  <!-- 首页快捷链接 -->
+  <!-- 首页快捷分类链接 -->
   <view class="index-link-list">
-    <view class="link-item-index" wx:for="{{10}}" wx:key="index">
-      <image src="../../assets/images/cate-1.png" mode="aspectFit" />
-      <text>鲜花玫瑰</text>
-    </view>
+    <block wx:for="{{categoryList}}" wx:key="index">
+      <navigator
+        url="/modules/goodModule/pages/goodslist/goodslist?category1Id={{item.id}}&categoryName={{item.name}}"
+        hover-class="navigator-hover"
+        open-type="navigate"
+        class="link-item-index"
+      >
+        <image src="{{item.imageUrl}}" mode="aspectFit" />
+        <text>{{item.name}}</text>
+      </navigator>
+    </block>
   </view>
 
-  <!-- 推荐展示 -->
+  <!-- 广告展示 -->
   <view class="recommend">
     <view class="right-big-pic">
-      <image src="../../assets/images/love.jpg" mode="aspectFit" />
+      <image src="{{advertiseList[0].imageUrl}}" mark:category2Id="{{(advertiseList[0].category2Id)}}" bind:tap="goGoodListCategory" mode="aspectFit" />
     </view>
     <view class="left-small-pic">
-      <image src="../../assets/images/friend.jpg" mode="aspectFill" />
-      <image src="../../assets/images/elder.jpg" mode="aspectFill" />
+      <image src="{{advertiseList[1].imageUrl}}" mark:category2Id="{{(advertiseList[1].category2Id)}}" bind:tap="goGoodListCategory" mode="aspectFill" />
+      <image src="{{advertiseList[2].imageUrl}}" mark:category2Id="{{(advertiseList[2].category2Id)}}" bind:tap="goGoodListCategory" mode="aspectFill" />
     </view>
-
   </view>
   <!-- 猜你喜欢 -->
   <view class="love-good">
     <view class="title"> <text>猜你喜欢</text></view>
 
     <view class="guess-your-love">
-      <card wx:for="{{6}}" wx:key="index"></card>
+      <block wx:for="{{goodsList}}" wx:key="index">
+        <card goodItem="{{item}}"></card>
+      </block>
     </view>
     <view class="button-get-more">
-      <navigator url="/pages/good/goodslist/goodslist" open-type="navigate" class="nav-get-more" hover-class="nav-get-more-hover">查看更多</navigator>
+      <navigator url="/modules/goodModule/pages/goodslist/goodslist" open-type="navigate" class="nav-get-more" hover-class="nav-get-more-hover">查看更多</navigator>
     </view>
   </view>
 
   <!-- 每日推荐 -->
-  <cardlist title="每日推荐"></cardlist>
-
-
+  <cardlist title="每日推荐" cardList="{{recommendList}}"></cardlist>
 </view>
+<button style="margin:40rpx;" bind:tap="asyncCreatePoster">点击生成海报</button>
+<poster id="poster" config="{{posterConfig}}" hide-loading="{{true}}" preload="{{false}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"> </poster>
+<van-popup
+  show="{{ show }}"
+  round
+  position="bottom"
+  bind:close="onClose"
+  safe-area-inset-top="{{true}}"
+  safe-area-tab-bar="{{true}}"
+  custom-style="height:1000rpx;width:768rpx;padding:20rpx;"
+  closeable
+  lock-scroll="{{true}}"
+  root-portal="{{true}}"
+  overlay="{{true}}"
+>
+  <image style="width:100%;height:800rpx" class="post-image" src="{{postImage}}" mode="aspectFit" lazy-load="false" bind:tap="previewPostImage" />
+  <button style="margin:20rpx 40rpx" bind:tap="saveImageToPhotosAlbum">点击保存图片</button>
+</van-popup>
+<van-toast id="van-toast" />
 <!-- 底部占位 -->
 <bottom-custom-place></bottom-custom-place>
+<!-- 组件参数：preload：图片资源预下载 hide-loading:"隐藏loading" -->

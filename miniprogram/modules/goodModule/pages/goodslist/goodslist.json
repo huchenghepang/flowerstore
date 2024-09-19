@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "cardlist": "/components/cardlist/cardlist",
+    "van-loading": "@vant/weapp/loading/index"
+  },
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f7f4f8",
+  "backgroundTextStyle": "dark"
+}

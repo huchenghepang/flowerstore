@@ -21,8 +21,16 @@
       width: 100%;
       height: 100%;
       border-radius: 30rpx;
+      .navigator {
+        width: 100%;
+        height: 100%;
+        border-radius: 30rpx;
+      }
 
-      image {
+      .navigator-hover {
+        background-color: #d87b7b;
+      }
+      .image {
         width: 100%;
         height: 100%;
         border-radius: 30rpx;
@@ -52,7 +60,7 @@
         height: 100rpx;
         object-fit: cover;
       }
-      text{
+      text {
         line-height: 40rpx;
         font-size: 24rpx;
       }
@@ -60,7 +68,7 @@
   }
 
   // 推荐展示
-  .recommend{
+  .recommend {
     width: 100%;
     height: 400rpx;
     box-sizing: border-box;
@@ -68,26 +76,26 @@
     border-radius: 16rpx;
     border: 2rpx solid #cfcccc;
     box-shadow: 2rpx 2rpx 4rpx #663a3a;
-    .right-big-pic{
+    .right-big-pic {
       box-sizing: border-box;
       padding: 10rpx 5rpx;
       padding-right: 0;
       float: left;
       width: 50%;
       height: 100%;
-      image{
+      image {
         width: 100%;
         height: 100%;
       }
     }
-    .left-small-pic{
+    .left-small-pic {
       width: 50%;
       height: 100%;
       padding: 10rpx 10rpx;
       padding-left: 0;
       box-sizing: border-box;
       float: right;
-      image{
+      image {
         width: 100%;
         height: 49%;
       }
@@ -95,42 +103,44 @@
   }
 
   // 猜你喜欢
-  .love-good{
-    .title{
+  .love-good {
+    .title {
       text-align: center;
       padding: 6rpx 0;
-      text{
+      text {
         font-size: 40rpx;
         font-weight: 600;
       }
     }
-    .guess-your-love{
+    .guess-your-love {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
       column-gap: 10rpx;
       row-gap: 10rpx;
     }
 
     // 查看更多
-    .button-get-more{
+    .button-get-more {
       height: 70rpx;
       width: 100%;
       background-color: #fff;
       margin-top: 10rpx;
       border-radius: 45rpx;
       text-align: center;
-      .nav-get-more{
+      .nav-get-more {
         height: 100%;
         border-radius: 45rpx;
         line-height: 60rpx;
         font-size: 32rpx;
       }
 
-      .nav-get-more-hover{
+      .nav-get-more-hover {
         color: #3a8d26;
       }
     }
   }
-  
+}
+
+.popup-container {
 }

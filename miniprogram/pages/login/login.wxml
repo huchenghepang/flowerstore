@@ -1,8 +1,7 @@
 <!--pages/login/login.wxml-->
 <custom-top-bar title="登录" isShowBack="true"></custom-top-bar>
 <van-empty class="custom-image" image="/assets/images/avatar.png" description="请点击下方的按钮，授权登陆您的账户～">
-
-  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" hover-class="hover-btn" round>
+  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" hover-class="hover-btn" round bind:tap="loginServe">
     点击登录授权
   </van-button>
 </van-empty>

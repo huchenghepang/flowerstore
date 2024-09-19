@@ -1,0 +1,31 @@
+<!--modules/addressModule/pages/address/address.wxml-->
+<custom-top-bar title="收货地址" isShowBack="true"></custom-top-bar>
+
+<view style="height:100vh" bind:tap="onSwipeCellPageTap">
+  <view class="address-list">
+    <block wx:for="{{addressList}}" wx:key="index">
+      <!-- 不要使用纯数字作为ID -->
+      <van-swipe-cell id="id{{item.id}}" custom-class="address-swipe" right-width="{{ 73 }}" bind:open="onOpenSwipe" bind:click="onSwipeCellClick">
+        <van-cell-group custom-class="address-group">
+          <van-cell bind:tap="changeAddress" mark:id="{{item.id}}" custom-class="address-item" use-label-slot>
+            <view class="title" slot="title">
+              <text class="name text">{{item.name}}</text>
+              <text class="phonenumber text">{{item.phone}}</text>
+              <text class="default text" wx:if="{{item.isDefault}}">默认</text>
+            </view>
+            <view class="label text-over-hidden" slot="label">{{item.fullAddress}}</view>
+            <view slot="right-icon"><van-icon name="edit" mark:id="{{item.id}}" bind:tap="goAddAddressPage" size="24"/></view>
+          </van-cell>
+        </van-cell-group>
+        <view slot="right" class="van-swipe-cell__right" mark:id="{{item.id}}" bind:tap="deleteAddress">
+          删除
+          <!-- <button class="default" size="default" size="default" type="warn" disabled="false" hover-class="button-hover" hover-stop-propagation="false" form-type="submit">删除</button> -->
+        </view>
+      </van-swipe-cell>
+    </block>
+    <text class="bottom-text">往左滑动删除地址</text>
+  </view>
+  <navigator url="/modules/addressModule/pages/addaddress/addaddress" hover-class="navigator-hover" open-type="navigate">
+    <button class="add-btn">添加新地址</button>
+  </navigator>
+</view>

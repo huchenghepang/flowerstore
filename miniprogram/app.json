@@ -5,11 +5,48 @@
     "pages/myinfo/myinfo",
     "pages/paycart/paycart",
     "pages/category/category",
-    "pages/good/goodslist/goodslist",
-    "pages/good/detail/detail",
-    "pages/order/order",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/test/test",
+    "pages/test2/test2",
+    "pages/test3/test3",
+    "pages/myinfo/setting/setting"
   ],
+  "subpackages": [
+    {
+      "root": "modules/settingModule",
+      "name": "settingModule",
+      "pages": ["pages/profile/profile"]
+    },
+    {
+      "root": "modules/addressModule",
+      "name": "addressModule",
+      "pages": ["pages/addaddress/addaddress", "pages/address/address"]
+    },
+    {
+      "root": "modules/goodModule",
+      "name": "goodModule",
+      "pages": ["pages/detail/detail", "pages/goodslist/goodslist"]
+    },
+    {
+      "root": "modules/payOrderModule",
+      "name": "payOrderModule",
+      "pages": ["pages/payOrder/payOrder", "pages/order/order"]
+    }
+  ],
+  "preloadRule": {
+    "pages/myinfo/setting/setting": {
+      "network": "all",
+      "packages": ["settingModule", "addressModule", "payOrderModule"]
+    },
+    "pages/category/category": {
+      "network": "all",
+      "packages": ["goodModule"]
+    },
+    "pages/paycart/paycart": {
+      "network": "all",
+      "packages": ["payOrderModule"]
+    }
+  },
   "tabBar": {
     "custom": true,
     "color": "#7A7E83",
@@ -70,5 +107,17 @@
   "lazyCodeLoading": "requiredComponents",
   "resolveAlias": {
     "@/*": "/*"
+  },
+  "requiredPrivateInfos": ["getLocation", "chooseLocation"],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置信息将用于填写收货地址"
+    }
+  },
+  "plugins": {
+    "poster": {
+      "version": "1.0.14",
+      "provider": "wx8a6f7c4b3d410554"
+    }
   }
 }

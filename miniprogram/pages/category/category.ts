@@ -1,3 +1,5 @@
+
+import {reqCategoryData} from '@/api/index'
 // pages/category/category.ts
 Page({
 
@@ -5,14 +7,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    categoryDataList:[
 
+    ],
+    activeIndex:0,
+    category2DataList:[],
+    category1Id:null,
+    isLoading:true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.getCategoryData();
   },
 
   /**
@@ -29,7 +37,7 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 1
+        selected: 1,
       })
     }
   },
@@ -67,5 +75,36 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  // 获取分类页面的数据
+  async getCategoryData(){
+    try {
+      const result = await reqCategoryData()
+      this.setData({
+        categoryDataList: result.data,
+        category2DataList:result.data[0].children,
+        category1Id:result.data[0].id,
+        isLoading:false
+      })
+      console.log(this.data.categoryDataList);
+      console.log(this.data.category2DataList);
+      
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+  },
+
+  // 处理切换分类
+  onChangeCategoryItem(event:any){
+    // 重新设置激活的样式
+    this.setData({
+      activeIndex:event.mark.index,
+      category2DataList:this.data.categoryDataList[event.mark.index].children,
+      category1Id:this.data.categoryDataList[event.mark.index].id
+    })
+    
+  } 
 })

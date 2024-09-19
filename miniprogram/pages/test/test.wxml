@@ -1,0 +1,16 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+
+<!-- 获取微信头像并上传微信头像 -->
+<button class="btn" open-type="chooseAvatar" bindchooseavatar="uploadAvator">
+  点击获取微信头像
+</button>
+
+<view class="avator">
+  <image class="avator-pic" src="{{avatarUrl}}" mode="aspectFit" lazy-load="false" />
+</view>
+
+<view>
+  numA:{{numA}} numB:{{numB}} sum:{{sum}} computedSum:{{computedSum}}
+</view>
+<button type="primary" plain="{{true}}" bindtap="add" mark:number="10">点我使得numA加一</button>

@@ -1,0 +1,55 @@
+<!--
+此文件为开发者工具生成，生成时间: 2024/9/3上午7:51:42
+使用方法：
+在 c:\Users\Jeff\Desktop\flowerStore\miniprogram\pages\index\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 c:\Users\Jeff\Desktop\flowerStore\miniprogram\pages\index\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/custom-nav-bar/custom-nav-bar">
+      <view class="nav-bar-container bar--nav-bar-container" style="height: 60px;">
+        <view class="place-block bar--place-block" style="height: 20px;"></view>
+        <view class="main bar--main">
+          <view class="place-holder bar--place-holder" style="height: 40px;"></view>
+          <view class="center-bar bar--center-bar sk-transparent sk-text-14-2857-200 sk-text">同城鲜花送</view>
+        </view>
+      </view>
+    </view>
+    <view class="index-container">
+      <view class="background-top"></view>
+      <swiper autoplay="false" circular="true" indicator-dots="true" class="swiper-container" indicator-active-color="#bfa" interval="2000" current="0"></swiper>
+      <view class="index-link-list"></view>
+      <view class="recommend">
+        <view class="right-big-pic">
+          <image mode="aspectFit" class="sk-image"></image>
+        </view>
+        <view class="left-small-pic">
+          <image mode="aspectFill" class="sk-image"></image>
+          <image mode="aspectFill" class="sk-image"></image>
+        </view>
+      </view>
+      <view class="love-good">
+        <view class="title">
+          <text class="sk-transparent sk-text-14-2857-802 sk-text" style="background-position-x: 50%;">猜你喜欢</text>
+        </view>
+        <view class="guess-your-love"></view>
+        <view class="button-get-more">
+          <navigator class="nav-get-more sk-transparent sk-text-23-3333-513 sk-text" hover-class="nav-get-more-hover" open-type="navigate" style="background-position-x: 50%;"
+            >查看更多</navigator
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

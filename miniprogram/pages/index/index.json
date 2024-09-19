@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "card":"/components/card/card",
-    "cardlist":"/components/cardlist/cardlist"
+    "card": "/components/card/card",
+    "cardlist": "/components/cardlist/cardlist",
+    "poster": "plugin://poster/poster",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-toast": "@vant/weapp/toast/index"
   }
 }

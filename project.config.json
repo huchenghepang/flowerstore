@@ -14,7 +14,7 @@
     },
     "coverView": false,
     "postcss": false,
-    "minified": false,
+    "minified": true,
     "enhance": true,
     "showShadowRootInWxmlPanel": false,
     "packNpmRelationList": [
@@ -31,7 +31,9 @@
     "condition": true
   },
   "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "simulatorPluginLibVersion": {
+    "wxext14566970e7e9f62": "3.2.5-47"
+  },
   "condition": {},
   "srcMiniprogramRoot": "miniprogram/",
   "editorSetting": {
@@ -43,5 +45,6 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wx54ed151012723ab5"
+  "appid": "wx54ed151012723ab5",
+  "projectArchitecture": "multiPlatform"
 }

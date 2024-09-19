@@ -1,22 +1,33 @@
 <!--pages/category/category.wxml-->
 <!-- 顶部导航栏 -->
+<!-- 引入骨架屏 -->
+<import src="category.skeleton.wxml"></import>
+<!-- 使用骨架屏 -->
+<template is="skeleton" wx:if="{{isLoading}}"></template>
+
 <custom-top-bar title="分类"></custom-top-bar>
 <custom-main-content>
   <view class="category-container">
     <!-- 一级分类 -->
     <view class="first-category">
-      <view class="first-item"><text class="text text-active">爱礼精选</text></view>
-      <view class="first-item"><text class="text">鲜花玫瑰</text></view>
-      <view class="first-item"><text class="text">永生玫瑰</text></view>
-      <view class="first-item"><text class="text">玫瑰珠宝</text></view>
+      <block wx:for="{{categoryDataList}}" wx:key="index">
+        <!-- text-active 动态设置激活的类 -->
+        <view class="first-item" bind:tap="onChangeCategoryItem" mark:index="{{index}}"><text class="text {{activeIndex==index?'text-active':''}}">{{item.name}}</text></view>
+      </block>
     </view>
     <!-- 二级分类 -->
     <view class="second-category">
       <view class="index-link-list">
-        <navigator url="/pages/good/goodslist/goodslist" class="link-item-index" wx:for="{{10}}" wx:key="index" open-type="navigate">
-          <image src="../../assets/images/cate-1.png" mode="aspectFit" />
-          <text>真情告白</text>
-        </navigator>
+        <block wx:for="{{category2DataList}}" wx:key="index">
+          <navigator
+            url="/modules/goodModule/pages/goodslist/goodslist?category1Id={{category1Id}}&category2Id={{item.id}}&categoryName={{item.name}}"
+            class="link-item-index"
+            open-type="navigate"
+          >
+            <image src="{{item.imageUrl}}" mode="aspectFit" />
+            <text>{{item.name}}</text>
+          </navigator>
+        </block>
       </view>
     </view>
   </view>

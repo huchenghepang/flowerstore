@@ -20,6 +20,10 @@ Component({
     isShowBack: {
       type: Boolean,
       value: false
+    },
+    isShowIndex: {
+      type: Boolean,
+      value: false
     }
   },
 

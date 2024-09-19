@@ -1,15 +1,16 @@
 /* pages/paycart/paycart.wxss */
-.cart-list{
+.cart-list {
   padding: 10rpx 20rpx;
-  margin-bottom:88px;
-  
-  .van-swipe-cell__right{
+  margin-bottom: 88px;
+
+  .van-swipe-cell__right {
     background-color: #fafaaf;
     display: flex;
     border-radius: 25rpx;
     width: 65px;
+    height: 100%;
     text-align: center;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     color: rgb(148, 3, 3);
   }
@@ -24,23 +25,23 @@
     display: flex;
     background-color: #ffffff;
 
-    .check-cart{
+    .check-cart {
       height: 100%;
     }
     .img {
       width: 40%;
       height: 100%;
     }
-  
+
     .cart-info-good {
       width: 50%;
       padding: 10rpx;
       position: relative;
-  
+
       .title {
         font-size: 24rpx;
       }
-  
+
       .cart-detail {
         position: absolute;
         width: 100%;
@@ -48,7 +49,7 @@
         left: 0;
         display: flex;
         justify-content: space-between;
-  
+
         .text {
           color: orangered;
         }
@@ -57,10 +58,19 @@
   }
 
   // 提交购物车订单
-  .submit-bar{
+  .submit-bar {
     bottom: 48px;
   }
-
 }
 
-
+// 导航跳转按钮
+.nav-btn {
+  width: 200rpx;
+  height: 60rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  background-color: rgb(73, 165, 165);
+  color: #fafafa;
+  line-height: 60rpx;
+}

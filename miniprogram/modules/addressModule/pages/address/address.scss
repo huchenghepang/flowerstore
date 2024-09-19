@@ -1,0 +1,75 @@
+/* modules/addressModule/pages/address/address.scss */
+
+.address-list {
+  padding: 25rpx;
+
+  .address-swipe {
+    width: 100%;
+    height: 120rpx;
+    .address-group {
+      .address-item {
+        width: 100%;
+        .title {
+          display: flex;
+          height: 40rpx;
+          align-items: center;
+
+          .text {
+            padding: 0 10rpx;
+          }
+
+          .default {
+            font-size: 22rpx;
+            padding: 0;
+            color: orange;
+            background: rgb(216, 199, 199);
+            display: inline;
+            line-height: 22rpx;
+          }
+        }
+        .label {
+          padding: 10rpx;
+          color: rgb(82, 82, 79);
+        }
+      }
+    }
+
+    .van-swipe-cell__right {
+      background-color: rgb(226, 94, 94);
+      padding: 20rpx;
+      text-align: center;
+      box-sizing: border-box;
+      color: #fafafa;
+      border-top-right-radius: 20rpx;
+    }
+  }
+}
+
+.add-btn {
+  width: 85%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 40rpx;
+  background-color: #9acd32;
+  border-radius: 60rpx;
+  color: #fafafa;
+  margin: 0 auto;
+}
+
+.bottom-text {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  color: rgb(216, 199, 199);
+}
+// 文本溢出隐藏
+.text-over-hidden {
+  height: 30rpx;
+  overflow: hidden;
+  word-break: break-all; /* break-all(允许在单词内换行。) */
+  text-overflow: ellipsis; /* 超出部分省略号 */
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 1; /** 显示的行数 **/
+}

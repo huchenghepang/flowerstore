@@ -1,0 +1,40 @@
+<!--
+此文件为开发者工具生成，生成时间: 2024/9/4上午12:25:26
+使用方法：
+在 c:\Users\Jeff\Desktop\flowerStore\miniprogram\pages\category\category.wxml 引入模板
+
+```
+<import src="category.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 c:\Users\Jeff\Desktop\flowerStore\miniprogram\pages\category\category.wxss 中引入样式
+```
+@import "./category.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/custom-nav-bar/custom-nav-bar">
+      <view class="nav-bar-container bar--nav-bar-container" style="height: 60px;">
+        <view class="place-block bar--place-block" style="height: 20px;"></view>
+        <view class="main bar--main">
+          <view class="place-holder bar--place-holder" style="height: 40px;"></view>
+          <view class="center-bar bar--center-bar sk-transparent sk-text-14-2857-24 sk-text">分类</view>
+        </view>
+      </view>
+    </view>
+    <view is="components/custom-main-content/custom-main-content">
+      <view class="content--custom-main-content" style="height: 559px;">
+        <view class="category-container">
+          <view class="first-category"></view>
+          <view class="second-category">
+            <view class="index-link-list"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

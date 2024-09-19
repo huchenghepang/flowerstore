@@ -1,4 +1,6 @@
 // pages/myinfo/myinfo.ts
+import { userStoreBehavior } from "@/behavior/behavior";
+
 Page({
 
   /**
@@ -7,6 +9,7 @@ Page({
   data: {
 
   },
+  behaviors: [userStoreBehavior],
 
   /**
    * 生命周期函数--监听页面加载
@@ -70,14 +73,20 @@ Page({
   },
 
   // 订单页
-  goOrderPage(){
+  goOrderPage() {
     wx.navigateTo({
-      url:"/pages/order/order"
+      url: "/modules/payOrderModule/pages/order/order"
     });
   },
-  goLoginPage(){
+  goLoginPage() {
+
     wx.navigateTo({
-      url:"/pages/login/login"
+      url: "/pages/login/login"
+    })
+  },
+  goSetting() {
+    wx.navigateTo({
+      url: "/pages/myinfo/setting/setting"
     })
   }
 })

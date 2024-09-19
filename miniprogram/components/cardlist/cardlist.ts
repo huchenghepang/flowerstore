@@ -4,21 +4,25 @@ Component({
   /**
    * 组件的属性列表
    */
-  options:{
-    multipleSlots:true
+  options: {
+    multipleSlots: true
   },
   properties: {
-    title:{
-      type:String,
-      value:"标题"
+    title: {
+      type: String,
+      value: "标题"
     },
-    isShowMore:{
-      type:Boolean,
-      value:true
+    isShowMore: {
+      type: Boolean,
+      value: true
     },
-    isShowTitle:{
-      type:Boolean,
-      value:true
+    isShowTitle: {
+      type: Boolean,
+      value: true
+    },
+    cardList: {
+      type: Array,
+      value: []
     }
   },
 

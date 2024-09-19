@@ -1,66 +1,48 @@
 // pages/login/login.ts
-Page({
+import { toast } from "@/utils/extends/toast"
+import { reqLogin, reqUserInfo } from "../../api/index";
+import { userStore } from "../../store/userStore";
+import { ComponentWithStore } from "mobx-miniprogram-bindings";
+import { getCurrentPageParam } from "@/utils/pageInfo";
+const { debounce } = require('@/utils/debounce');
+ComponentWithStore({
+  // 方法设置 没有用组件就不用写methods方法
+  methods: {
+    // 初始登录
+    loginServe: debounce(function () {
+      wx.login({
+        success: async (res) => {
+          if (res.code) {
+            const result = await reqLogin(res.code);
+            userStore.login(result.data.token);
+            // 在登录成功后获取用户信息
+            this.getUserInfo();
+            // 跳转到我的界面 或者之前的界面
+            const { redirect } = getCurrentPageParam()
+            if (redirect) {
+              wx.navigateBack()
+              return;
+            }
+            wx.switchTab({ url: "/pages/myinfo/myinfo" })
+          } else {
+            toast({ title: "登录失败", icon: "error" })
+          }
+        }
+      })
+    }, 500),
+    // 获取用户信息
+    async getUserInfo() {
+      let { data } = await reqUserInfo();
+      userStore.setUserInfo(data);
+
+    }
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad() {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

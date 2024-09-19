@@ -1,0 +1,17 @@
+<!--pages/test/test.wxml-->
+<text>测试2</text>
+
+<!-- 获取微信头像并上传微信头像 -->
+<button class="btn" open-type="chooseAvatar" bindchooseavatar="uploadAvator">
+  点击获取微信头像
+</button>
+
+<view class="avator">
+  <image class="avator-pic" src="{{avatarUrl}}" mode="aspectFit" lazy-load="false" />
+</view>
+
+<view>
+  numA:{{numStore.A}} numStore.numB:{{numStore.B}} sum:{{numStore.sum}} computedSum:{{numStore.computedSum}}
+</view>
+<!-- 方法不会使用命名空间直接调用就好了 -->
+<button type="primary" plain="{{true}}" bindtap="addAll" mark:number="10">点我使得numA加一</button>

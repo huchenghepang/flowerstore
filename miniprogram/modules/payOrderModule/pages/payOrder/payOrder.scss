@@ -1,0 +1,25 @@
+/* modules/payModule/payOder/payOder.scss */
+
+.container {
+  padding: 20rpx;
+
+  .oder-container {
+    margin-top: 20rpx;
+
+    // 订单备注
+    .text-remark {
+      background-color: #f7f9fb;
+      padding: 20rpx;
+      height: 160rpx;
+    }
+  }
+
+  // 订单列表
+  .oder-list {
+    background-color: #ffffff;
+    margin-top: 20rpx;
+    .oder-detail {
+      margin-bottom: 20rpx;
+    }
+  }
+}

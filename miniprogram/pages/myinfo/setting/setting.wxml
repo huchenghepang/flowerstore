@@ -1,0 +1,12 @@
+<!--pages/myinfo/setting/setting.wxml-->
+<custom-top-bar title="账号设置" isShowBack="true"></custom-top-bar>
+<view class="placer" style="height:40rpx;wight:100%"></view>
+<van-cell-group class="setting-container" inset>
+  <van-cell title="修改个人信息" value=">" url="/modules/settingModule/pages/profile/profile" />
+  <!-- 我的收货地址 -->
+  <van-cell title="我的收货地址" value=">" url="/modules/addressModule/pages/address/address"></van-cell>
+  <!-- 问题反馈 -->
+  <van-cell title="问题反馈" value=">"></van-cell>
+  <!-- 联系我们 -->
+  <van-cell title="联系我们" value=">"></van-cell>
+</van-cell-group>

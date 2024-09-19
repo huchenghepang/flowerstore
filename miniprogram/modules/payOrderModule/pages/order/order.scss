@@ -1,0 +1,62 @@
+/* pages/order/order.wxss */
+
+.nav-bar-container {
+  background-color: rgb(245, 178, 178) !important;
+}
+
+// 订单列表
+
+.order-list {
+  padding: 25rpx;
+
+  .order-item {
+    border-radius: 30rpx;
+    background-color: #fafafa;
+    box-shadow: 2rpx 2rpx 4rpx #747272;
+    margin: 0 0 30rpx;
+    .header {
+      font-size: 24rpx;
+      padding: 5rpx 30rpx;
+      display: flex;
+      justify-content: space-between;
+      height: 40rpx;
+      line-height: 40rpx;
+    }
+
+    .good-card {
+      border-bottom: 2rpx solid rgba(138, 102, 102, 0.6);
+    }
+    .order-info {
+      padding: 20rpx;
+      color: gray;
+      font-size: 32rpx;
+      display: flex;
+      justify-content: space-between;
+      .price {
+        font-size: 32rpx;
+        color: rgb(117, 17, 17);
+      }
+      .total-count {
+        font-size: 32rpx;
+        color: rgb(235, 108, 235);
+      }
+    }
+  }
+  // 无数据
+  .bottom-tip {
+    margin-top: 20rpx;
+    font-size: 32rpx;
+    color: gray;
+    text-align: center;
+  }
+
+  // 加载状态
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    font-size: 32rpx;
+    color: rgb(43, 80, 199);
+  }
+}

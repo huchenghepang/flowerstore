@@ -1,0 +1,20 @@
+<custom-top-bar title="{{pageTitle}}" isShowBack="true"></custom-top-bar>
+
+<view class="address">
+  <van-cell-group>
+    <van-field model:value="{{ name }}" required clearable label="收货人" placeholder="收货人名字" />
+    <van-field model:value="{{ phone }}" label="手机号码" placeholder="收货人号码" required />
+    <van-field model:value="{{ cityName }}" label="所在地区" required placeholder="收货人所在城市">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" slot="input" custom-item="{{customItem}}">
+        <input type="text" value="{{simpleAddress}}" placeholder="请选择收货的区域" placeholder-class="place-class" disabled />
+      </picker>
+      <view slot="right-icon" bind:tap="chooseLocation"> <van-icon name="location-o" />定位 </view>
+    </van-field>
+    <van-field model:value="{{ address }}" label="详细地址" required placeholder="请输入收货人详细地址" autosize> </van-field>
+    <van-cell title="设置默认地址">
+      <van-switch checked="{{ checked }}" bind:change="onChangeDefault" size="mini" />
+    </van-cell>
+  </van-cell-group>
+</view>
+
+<button class="save-btn" bind:tap="saveAddressform">保存</button>
